@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
-import * as api from '../../services/fetchAPI';
+import React, { Component, useContext } from 'react';
 import { Header, Loading } from '../../components';
+import * as view from '../../views';
+import * as css from './style';
+import BooksContext from '../../context/BooksContext'
+
 
 class Home extends Component {
   constructor(props) {
@@ -9,19 +12,22 @@ class Home extends Component {
       books: []
     };
   }
-
-  async componentDidMount() {
-    const result = await api.getBooks();
-    this.setState({ books: result });
-  }
+  const { Loading, isLoading} = useContext(BooksContext);
 
   render() {
     return (
-      <>
+      <css.HomeStyle>
         <Header />
-        <Loading />
+        {Loading ? <Loading> :
+          <>
+            <view.Bookshelf query={ 'Aventura' } amount={ 10 } />
+            <view.Bookshelf query={ 'Infantil' } amount={ 10 } />
+            <view.Bookshelf query={ 'Destaques' } amount={ 10 } />
+            <view.Bookshelf query={ 'Acao' } amount={ 10 } />
+          </>
+        }
         <h1>Initial</h1>
-      </>
+      </css.HomeStyle>
     );
   };
 };
