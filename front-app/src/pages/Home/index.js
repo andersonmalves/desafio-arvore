@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../../services/fetchAPI';
+import { Header } from '../../components';
 
 class Home extends Component {
   constructor(props) {
@@ -7,7 +8,6 @@ class Home extends Component {
     this.state = {
       books: []
     };
-
   }
 
   async componentDidMount() {
@@ -17,7 +17,10 @@ class Home extends Component {
 
   render() {
     return (
-      <h1>Initial</h1>
+      <>
+        <Header />
+        <h1>Initial</h1>
+      </>
     );
   };
 };
