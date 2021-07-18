@@ -1,5 +1,5 @@
-export async function getBooks() {
-  const ENDPOINT = 'https://www.googleapis.com/books/v1/volumes?q=Query&startIndex=0&maxResults=10';
+export async function getBooks(query, max) {
+  const ENDPOINT = `https://www.googleapis.com/books/v1/volumes?q=${ query }&startIndex=0&maxResults=${ max }`;
   try {
     const response = await fetch(ENDPOINT);
     const result = await response.json();

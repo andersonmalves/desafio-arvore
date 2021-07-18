@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import * as api from '../../services/fetchAPI';
-import { Header } from '../../components';
+import { Header, Loading } from '../../components';
 
 class Home extends Component {
   constructor(props) {
@@ -19,6 +19,7 @@ class Home extends Component {
     return (
       <>
         <Header />
+        <Loading />
         <h1>Initial</h1>
       </>
     );
