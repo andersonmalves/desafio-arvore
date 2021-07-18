@@ -5,20 +5,14 @@ import * as css from './style';
 import BooksContext from '../../context/BooksContext'
 
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      books: []
-    };
-  }
-  const { Loading, isLoading} = useContext(BooksContext);
-
-  render() {
+const Home = () => {
+  const { isLoading } = useContext(BooksContext);
     return (
+      <>
       <css.HomeStyle>
         <Header />
-        {Loading ? <Loading> :
+        <h1>Initial</h1>
+        {isLoading ? <Loading> :
           <>
             <view.Bookshelf query={ 'Aventura' } amount={ 10 } />
             <view.Bookshelf query={ 'Infantil' } amount={ 10 } />
@@ -26,10 +20,9 @@ class Home extends Component {
             <view.Bookshelf query={ 'Acao' } amount={ 10 } />
           </>
         }
-        <h1>Initial</h1>
-      </css.HomeStyle>
+      </ css.HomeStyle>
+    </>
     );
-  };
 };
 
 export default Home;
