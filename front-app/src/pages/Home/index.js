@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Header, Loading } from '../../components';
 import * as view from '../../views';
 import * as css from './style';
@@ -11,14 +11,17 @@ const Home = () => {
       <>
       <css.HomeStyle>
         <Header />
-        <h1>Initial</h1>
-        {isLoading ? <Loading> :
-          <>
-            <view.Bookshelf query={ 'Aventura' } amount={ 10 } />
-            <view.Bookshelf query={ 'Infantil' } amount={ 10 } />
-            <view.Bookshelf query={ 'Destaques' } amount={ 10 } />
-            <view.Bookshelf query={ 'Acao' } amount={ 10 } />
-          </>
+        {
+          isLoading ? (
+            <>
+              <view.Bookshelf query={ 'Aventura' } amount={ 10 } />
+              <view.Bookshelf query={ 'Infantil' } amount={ 10 } />
+              <view.Bookshelf query={ 'Destaques' } amount={ 10 } />
+              <view.Bookshelf query={ 'Acao' } amount={ 10 } />
+            </>
+          ) : (
+            <Loading />
+          )
         }
       </ css.HomeStyle>
     </>
@@ -26,3 +29,4 @@ const Home = () => {
 };
 
 export default Home;
+

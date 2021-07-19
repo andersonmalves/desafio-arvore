@@ -12,13 +12,24 @@ const Bookshelf = (query, amount) => {
       setListBooks(result)
     }
     request()
-  }, []);
+  }, [query, amount]);
 
   return (
-    <css.BookshelfStyle>
-      <h2>{query.query}</h2>
-      {listBooks.map((book) => <cp.BookCard title={book.volumeInfo.title} key={book.id} image={book.volumeInfo.imageLinks} />)}
-    </css.BookshelfStyle>
+    <>
+      <css.Category title={ query.query }>{query.query}</css.Category>
+      <css.BookshelfStyle title={ query.query }>
+        {
+          listBooks.map((book) => (
+            <cp.BookCard
+              title={book.volumeInfo.title}
+              key={book.id}
+              image={book.volumeInfo.imageLinks}
+              category={ query.query }
+            />
+          ))
+        }
+      </css.BookshelfStyle>
+    </>
   )
 }
 
