@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Header, Loading } from '../../components';
+import { Loading } from '../../components';
 import * as view from '../../views';
 import * as css from './style';
 import BooksContext from '../../context/BooksContext'
@@ -9,22 +9,22 @@ const Home = () => {
   const { isLoading } = useContext(BooksContext);
     return (
       <>
-      <css.HomeStyle>
-        <Header />
-        {
-          isLoading ? (
-            <>
-              <view.Bookshelf query={ 'Aventura' } amount={ 10 } />
-              <view.Bookshelf query={ 'Infantil' } amount={ 10 } />
-              <view.Bookshelf query={ 'Destaques' } amount={ 10 } />
-              <view.Bookshelf query={ 'Acao' } amount={ 10 } />
-            </>
-          ) : (
-            <Loading />
-          )
-        }
-      </ css.HomeStyle>
-    </>
+        <css.HomeStyle>
+          <view.Header />
+          {
+            isLoading ? (
+              <>
+                <view.Bookshelf query={ 'Aventura' } amount={ 10 } />
+                <view.Bookshelf query={ 'Infantil' } amount={ 10 } />
+                <view.Bookshelf query={ 'Destaques' } amount={ 10 } />
+                <view.Bookshelf query={ 'Acao' } amount={ 10 } />
+              </>
+            ) : (
+              <Loading />
+            )
+          }
+        </ css.HomeStyle>
+      </>
     );
 };
 

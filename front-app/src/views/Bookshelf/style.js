@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const BookshelfStyle = styled.div`
-  background-color: ${({ title}) => title === 'Destaques' ? '#00B0F2' : '#FEFEFF'};
+  background-color: ${({ title }) => title === 'Destaques' ? '#00B0F2' : '#FEFEFF'};
   display: flex;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
