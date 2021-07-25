@@ -4,10 +4,13 @@ import BookContext from '../BooksContext';
 
 function Provider({children}) {
   const [isLoading, setIsLoading] = useState(true)
+  const [searchTerm, setSearchTerm] = useState('')
 
   const contextValue = {
     isLoading,
     setIsLoading,
+    searchTerm,
+    setSearchTerm
   };
 
   return (
