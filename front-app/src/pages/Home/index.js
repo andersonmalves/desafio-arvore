@@ -20,7 +20,7 @@ const Home = () => {
                 <view.Bookshelf query={ 'Destaques' } amount={ 10 } />
                 <view.Bookshelf query={ 'Acao' } amount={ 10 } />
               </>) : (
-                <view.Bookshelf query={ searchTerm} amount={ 10 } />
+                <view.SearchedBooks query={ searchTerm} amount={ 10 } />
               )
             ) : (
               <Loading />
