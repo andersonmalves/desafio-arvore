@@ -1,6 +1,6 @@
 # Árvore | Teste Técnico Frontender
 
-#### Objetivo:
+### :notebook_with_decorative_cover: Objetivo
 
 Usando a API de Busca de Livros do Google, o candidato deve criar uma aplicação web responsiva em react.
 
@@ -9,8 +9,9 @@ As prateleiras da tela inicial são resultados de busca pelo título da pratelei
 Desconsiderar a parte de Filtros do layout.
 
 ##### API 
-
+```url
 https://www.googleapis.com/books/v1/volumes?q=Query&startIndex=0&maxResults=10
+```
 
 Onde:
 
@@ -22,7 +23,7 @@ Onde:
 ---
 
 
-##### Requisitos mínimos:
+#### :computer: Requisitos mínimos:
 
 - Documentação do repositório git
 - Histórico de commits
@@ -32,8 +33,38 @@ Onde:
 - Estilização baseada em CSS-IN-JS, exemplo: Styled Component
 
 
-##### Requisitos desejáveis:
+#### :sparkles: Requisitos desejáveis:
 
 - Testes unitários
 - React Hooks
 - Paginação dos resultados
+
+---
+
+### :arrow_forward: Executando a aplicação
+
+Para executar a aplicação localmente siga as instruções abaixo.
+
+#### Pré-requisitos
+
+Primeiramente é necessário que possua instalado as seguintes ferramentas: gerenciador de pacotes NPM e o Git.
+Além disto é bom ter um editor para trabalhar com o código como VSCode.
+
+#### Instalação
+
+1. Faça uma cópia do repositório (HTTPS ou SSH)
+   ```sh
+   git clone https://github.com/andersonmalves/desafio-arvore.git
+   ```
+
+2. Acesse a pasta do repositório local e instale os pacotes necessários
+
+   ```sh
+   npm install
+   ```
+
+3. Na pasta do repositório local execute o comando para iniciar a aplicação
+
+   ```sh
+   npm start
+   ```
